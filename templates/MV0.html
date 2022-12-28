@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IKEA MV0</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        {% for elem in camion -%}
+    <ul class="camiones miLista col-6 list-group mv1 text-center" onclick="cambiarColor(this)"><h1>{{elem}}</h1>
+    {% for item in camion[elem] -%}
+            <li class="list-group-item list-group-item-primary mv1">Menaje:<em class="fw-bolder menaje">{{camion[elem][item]["Menaje"]}}</em></li>
+            <li class="list-group-item list-group-item-primary mv1">Textil11:<em class="fw-bolder textilonce">{{camion[elem][item]["Textil 11"]}}</em></li>
+            <li class="list-group-item list-group-item-primary mv1">Textil12:<em class="fw-bolder textildoce">{{camion[elem][item]["Textil 12"]}}</em></li>
+            <li class="list-group-item list-group-item-primary mv1">Orden:<em class="fw-bolder orden">{{camion[elem][item]["Orden"]}}</em></li>
+            <li class="list-group-item list-group-item-primary mv1">Baños:<em class="fw-bolder banos">{{camion[elem][item]["Baños"]}}</em></li>
+            <li class="list-group-item list-group-item-primary mv1">Iluminacion:<em class="fw-bolder ilu">{{camion[elem][item]["Iluminacion"]}}</em></li>
+            <li class="list-group-item list-group-item-primary mv1">Home Deco:<em class="fw-bolder deco"> {{camion[elem][item]["Deco"]}}</em></li>
+            <li class="list-group-item list-group-item-primary mv1">Niños:<em class="fw-bolder ninos">{{camion[elem][item]["Niños"]}}</em></li>
+            <li class="list-group-item list-group-item-primary mv1">Actividades:<em class="fw-bolder act">{{camion[elem][item]["Actividades"]}}</em></li>
+    {% endfor -%}
+    </ul>
+    {% endfor -%}
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
